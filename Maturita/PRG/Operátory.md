@@ -59,10 +59,10 @@ bitové
 int a = (1>0)?10 : 20
 ```
 **Vyhodnocování**
-Vyhodnocuje od konce
 ```c
 int a = 2, b=3;
 int c = a + b; // vvhyodnotí se a+b a pak až se přiřadí výsledek na místo v paměti vyhrazené pro c  
+int d = a > b ? a : b; // nejdříve se vyhodnotí podmínka potom se podle podmínky vyhodnotí a přiřadí hodnota proměnné d
 ```
 
 **Zrychlené vyhodnocování**
