@@ -36,8 +36,8 @@ float c = 5/2; // výsledek je taky 2, protože 5 i 2 jsou brány jako INT takž
 float c = a/b; // 2
 
 // příklad reálného dělení
-float d = /2.0; // 2.5
-float d = a/b (float) // 2.5
+float d /= 2.0; // 2.5
+float d = a/(float)b  // 2.5
 
 ```
 
