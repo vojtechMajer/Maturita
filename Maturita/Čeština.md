@@ -48,8 +48,6 @@ Chůva Julie - miluje a pomáhá Julii; Upovídaná; Slouží jako prostředník
 asi 16. století
 
 ### Děj
-
-
 Romeo a Merkucio a Benvolio (RMB)se dozvídají o maškarním bále od negramotného sluhy -> Romeo chce navštívit Rosalindu-> jdou na maškarní bál i přes to že nejsou pozvání kvůli svého jména ->
 
 Maškarní bál **Kapuletů** (oznámení zasnoubení Julie s Parisem) -> zamilování Romea a Julie -> 
@@ -83,5 +81,28 @@ Jazykové prostředky
 - věty jednoduché i souvětí
 
 Vyprávění skrze dialogy
-## William Shakespeare
 
+Motivy: vražda, láska, nevraživost mezi rody, sebevražda, svatba,  usmíření, maškarní bál
+## William Shakespeare
+Renesance
+
+## Lakomec
+
+
+
+# Pojmy
+
+**Literární druhy**
+drama, lyrika, epika
+
+**literární žánr**
+tragédie, komédie
+
+**výrazová forma**
+próza, poezie, drama
+
+**kompoziční výstavba** - děj je řazen chronologicky/retrospektivně, předmluva jednání ...
+
+jazykové (umělecké) prostředky - **spisovný jazyk**!!!, archaismy, historismy, metafora, personifikace, řečnická otázka
+vyprávěcí postupy - dialog, monolog, přímá řeč
+tropy a figury
