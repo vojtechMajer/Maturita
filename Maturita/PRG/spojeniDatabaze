@@ -1,0 +1,27 @@
+import java.sql.*;
+
+public class Main {
+    static Connection connection=null;
+    static String databaseName="spojenijava";
+    static String url="jdbc:mysql://localhost/"+databaseName;
+    static String username="root";
+    static String pasw="";
+    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+
+            
+        connection= DriverManager.getConnection(url,username,pasw);
+
+        PreparedStatement ps= connection.prepareStatement("INSERT INTO spojenijava.student(ID,jmeno,vek,prijmeni) VALUES (3,'Alois',15,'Alois');");
+        int status=ps.executeUpdate();
+        if(status!=0) System.out.println("Ulozeno");
+
+        Statement st= connection.createStatement();
+        ResultSet result=st.executeQuery("SELECT * FROM spojenijava.student");
+
+        while(result.next())
+        System.out.println(result.getInt(1)+" "+result.getString(2));
+
+connection.close();
+
+    }
+}
