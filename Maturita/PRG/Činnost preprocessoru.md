@@ -47,7 +47,7 @@ printf("%d", ((10) > (11) ? (10) : (11)) );
 Nejčastěji používaný příklad je ošetření pro includnutí stejných souborů vícekrát
 
 ```c
-#indef __MUJ_HLAVICKOVY_SOUBOR_H__ // jestli ještě nebyl nikde inkludnut, tedy nebyl ještě definován tak pokračujeme
+#ifndef __MUJ_HLAVICKOVY_SOUBOR_H__ // jestli ještě nebyl nikde inkludnut, tedy nebyl ještě definován tak pokračujeme
 #define __MUJ_HLAVICKOVY_SOUBOR_H__ // makro se zde definuje aby mohla proběhnout kontrola v dalších souborech
 
 ...
