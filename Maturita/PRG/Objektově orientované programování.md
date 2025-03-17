@@ -1,25 +1,58 @@
-# Draft fáze píšu sračky
+#  Základy objektově orientovaného programování, třídy a objekty (Java)
 
+## Vysvětlení pojmu
+strukturuje data a procedury (metody/operace) do tříd
+```JAVA
 
-oop - strukturuje data a procedury (metody/operace) do tříd
-
-třída je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běh mluv ... další nesmysly a data jako jméno výška ...
-
+``` 
+## Třída 
+je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běh mluv ... další nesmysly a data jako jméno výška ...
 třída určuje co bude každá instance mít za data(atributy), a metody 
+```JAVA
+public class Automobil
+{
+  //STATICKÉ ATRIBUTY
+  private static int _pocetAutomobilu;
+  //ATRIBUTY
+  private String _nazev;
+  private Barva _barva;
+  
+  //KONSTRUKTOR
+  public Automobil(String nazev, Barva barva)
+  {
+    _nazev = nazev;
+    _barva = barva;
+  }
+  //GETTERY A SETTERY
 
+  //METODY
+}
 
-instance třídy (objekt) - je pak už objekt vytvořen ze třídy se specifickými daty pro ten objekt (kdyby byla třída auto,, tak instance je Škoda Fábia, pistáciová, 50l, ...)
+```
+
+## Objekt
+je **instance třídy** - 
+je vytvořen ze třídy se specifickými daty pro danou instanci (kdyby byla třída auto,, tak instance je Škoda Fábia, pistáciová, 50l, ...)
+tvoříme klíčovým slovem **new()**, která volá **konstruktor** třídy a alokuje místo pro atributy a metody objektu
+```JAVA
+Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
+``` 
 
 
 Instance se vytváří pomocí klíčového slova new, které alokuje pamět pro objekt, protože objekty jsou referenční datové typy
 více v referenčních datových typech [[Datové Typy]]
 
 
-Zapouzdření
-"schování" dat, ke kterým by uživatel neměl mít přístup
-get() set() 
-private 
+## Zapouzdření
+způsob jak zabezpečit data 
+"znepřístupnění" dat mimo třídu, ke kterým by uživatel neměl mít přístup
+- **gettery** - metody pro vracení hodnoty atributu
+- **settery** - nastavení hodnoty atributu
 
+### Modifikátory přístupu(access modifiers)
+- private - přístupné jen v rámci třídy, kde byl atribut vytvořen
+- protected - přístupné jen pro potomky
+- public - přístupná pro všechny
 dáváme přístup k věcem, jen u těch u kterých je to nutné
 
 
