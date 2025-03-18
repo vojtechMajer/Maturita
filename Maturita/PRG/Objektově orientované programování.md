@@ -1,10 +1,19 @@
 #  Základy objektově orientovaného programování, třídy a objekty (Java)
 
 ## Vysvětlení pojmu
-strukturuje data a procedury (metody/operace) do tříd
-```JAVA
-
-``` 
+OOP - způsob programování (životní styl), který strukturuje data a procedury (metody/operace) do tříd
+- Třída
+  - Konstruktor
+    - Implicitní(Defaultní), Kopírovací, Inicializační, Vlastní(udělat cokoliv navíc) 
+  - Objekt
+  - Metoda
+    - Přetížení metody
+  - Vlastnosti(Properties)
+- Pilíře OOP
+  - Zapouzdření (gettery, settery, private...)
+  - Polymorfismus(rozhraní, abstraktní třídy)
+  - Dědičnost(rodič a potomek třídy)
+  - 
 ## Třída 
 je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běh mluv ... další nesmysly a data jako jméno výška ...
 třída určuje co bude každá instance mít za data(atributy), a metody 
