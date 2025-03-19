@@ -23,14 +23,14 @@ public class Automobil
   //STATICKÉ ATRIBUTY
   private static int _pocetAutomobilu;
   //ATRIBUTY
-  private String _nazev;
-  private Barva _barva;
+  private String nazev;
+  private Barva barva;
   
   //KONSTRUKTOR
   public Automobil(String nazev, Barva barva)
   {
-    _nazev = nazev;
-    _barva = barva;
+    this.nazev = nazev;
+    this.barva = barva;
   }
   //GETTERY A SETTERY
 
@@ -38,19 +38,47 @@ public class Automobil
 }
 
 ```
-
+## Konstuktor
+je **metodou** třídy která se volá při vytváření objektu
+máme 4 základní druhy:
+- **Implicitní** (nebo také "Defaultní")
+  Nemusí být definován ručně, po vytvoření třídy již existuje.
+  Nemá žádné parametry.
+  Jeho funkcí je inicializovat objekt výchozími hodnotami.
+  Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
+  Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
+- **Explicitní**
+  Konstruktor bez parametrů, který je definován přímo programátorem.
+  ```JAVA
+   public Automobil() {
+        this.nazev = "Lada Niva";
+        this.barva = Barva.Zelená;
+    }
+  ```
+- **Kopírovací**
+  Slouží k vytvoření kopie již existujícího objektu stejné třídy.
+  Obvykle má jede argument a to objekt stejné třídy.
+  ```JAVA
+  public Automobil(Automobil jineAuto) {
+        this.nazev = jineAuto.nazev;
+        this.barva = jineAuto.barva;
+    }
+  ```
+- **Inicializační**
+   umožňuje inicializovat objekt s konkrétními hodnotami, které jsou předány jako argumenty při vytváření objektu. Tento konstruktor je definován programátorem a přijímá parametry, které se používají pro nastavení hodnot instančních proměnných.
+   ```JAVA
+   public Automobil(String nazev, Barva barva) {
+        this.nazev = nazev;
+        this.barva = barva;
+    }
+  ```
 ## Objekt
 je **instance třídy** - 
 je vytvořen ze třídy se specifickými daty pro danou instanci (kdyby byla třída auto,, tak instance je Škoda Fábia, pistáciová, 50l, ...)
-tvoříme klíčovým slovem **new()**, která volá **konstruktor** třídy a alokuje místo pro atributy a metody objektu
+tvoříme klíčovým slovem **new()**, které alokuje pamět pro objekt a také volá **konstruktor** třídy a alokuje místo pro atributy a metody objektu
 ```JAVA
 Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
-``` 
-
-
-Instance se vytváří pomocí klíčového slova new, které alokuje pamět pro objekt, protože objekty jsou referenční datové typy
-více v referenčních datových typech [[Datové Typy]]
-
+```
 
 ## Zapouzdření
 způsob jak zabezpečit data 
