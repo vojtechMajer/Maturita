@@ -4,7 +4,7 @@
 OOP - způsob programování (životní styl), který strukturuje data a procedury (metody/operace) do tříd
 - Třída
   - Konstruktor
-    - Implicitní(Defaultní), Kopírovací, Inicializační, Vlastní(udělat cokoliv navíc) 
+    - Implicitní(Defaultní), Explicitní, Kopírovací, Inicializační, Vlastní(udělat cokoliv navíc) 
   - Objekt
   - Metoda
     - Přetížení metody
@@ -40,14 +40,14 @@ public class Automobil
 ```
 ## Konstuktor
 je **metodou** třídy která je používána k inicializaci objektu při jeho vytváření.
-máme 4 základní druhy:
-- **Implicitní** (nebo také "Defaultní")
+máme 5 základních druhů:
+### Implicitní (nebo také "Defaultní")
   - Nemusí být definován ručně, po vytvoření třídy již existuje.
   - Nemá žádné parametry.
   - Jeho funkcí je inicializovat objekt výchozími hodnotami.
   - Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
   - Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
-- **Explicitní**
+### Explicitní
   - Konstruktor bez parametrů, který je definován přímo programátorem.
   ```JAVA
    public Automobil() {
@@ -55,7 +55,7 @@ máme 4 základní druhy:
         this.barva = Barva.Zelená;
     }
   ```
-- **Kopírovací**
+### Kopírovací
   - Slouží k vytvoření kopie již existujícího objektu stejné třídy.
   - Obvykle má jede argument a to objekt stejné třídy.
   ```JAVA
@@ -64,7 +64,7 @@ máme 4 základní druhy:
         this.barva = jineAuto.barva;
     }
   ```
-- **Inicializační**
+- ### Inicializační
    - umožňuje inicializovat objekt s konkrétními hodnotami, které jsou předány jako argumenty při vytváření objektu. Tento konstruktor je definován programátorem a přijímá parametry, které se používají pro nastavení hodnot instančních proměnných.
    ```JAVA
    public Automobil(String nazev, Barva barva) {
