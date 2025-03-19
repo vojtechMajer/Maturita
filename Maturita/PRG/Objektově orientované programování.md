@@ -39,16 +39,16 @@ public class Automobil
 
 ```
 ## Konstuktor
-je **metodou** třídy která se volá při vytváření objektu
+je **metodou** třídy která je používána k inicializaci objektu při jeho vytváření.
 máme 4 základní druhy:
 - **Implicitní** (nebo také "Defaultní")
-  Nemusí být definován ručně, po vytvoření třídy již existuje.
-  Nemá žádné parametry.
-  Jeho funkcí je inicializovat objekt výchozími hodnotami.
-  Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
-  Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
+  - Nemusí být definován ručně, po vytvoření třídy již existuje.
+  - Nemá žádné parametry.
+  - Jeho funkcí je inicializovat objekt výchozími hodnotami.
+  - Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
+  - Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
 - **Explicitní**
-  Konstruktor bez parametrů, který je definován přímo programátorem.
+  - Konstruktor bez parametrů, který je definován přímo programátorem.
   ```JAVA
    public Automobil() {
         this.nazev = "Lada Niva";
@@ -56,8 +56,8 @@ máme 4 základní druhy:
     }
   ```
 - **Kopírovací**
-  Slouží k vytvoření kopie již existujícího objektu stejné třídy.
-  Obvykle má jede argument a to objekt stejné třídy.
+  - Slouží k vytvoření kopie již existujícího objektu stejné třídy.
+  - Obvykle má jede argument a to objekt stejné třídy.
   ```JAVA
   public Automobil(Automobil jineAuto) {
         this.nazev = jineAuto.nazev;
@@ -65,7 +65,7 @@ máme 4 základní druhy:
     }
   ```
 - **Inicializační**
-   umožňuje inicializovat objekt s konkrétními hodnotami, které jsou předány jako argumenty při vytváření objektu. Tento konstruktor je definován programátorem a přijímá parametry, které se používají pro nastavení hodnot instančních proměnných.
+   - umožňuje inicializovat objekt s konkrétními hodnotami, které jsou předány jako argumenty při vytváření objektu. Tento konstruktor je definován programátorem a přijímá parametry, které se používají pro nastavení hodnot instančních proměnných.
    ```JAVA
    public Automobil(String nazev, Barva barva) {
         this.nazev = nazev;
