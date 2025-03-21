@@ -29,7 +29,7 @@ int a = 5;
 int b = 2;
 
 int c = 5/2; // vysledek je 2
-int zbytek = 5%2;
+int zbytek = 5%2; // vysledek je 1
 
 // POZOR POZOR POZOR POZOR
 float c = 5/2; // výsledek je taky 2, protože 5 i 2 jsou brány jako INT takže se používá celočíselné dělení
@@ -84,9 +84,9 @@ Tedy **char** (1B) má 256 různých znaků = ascii tabulka má 256 různých zn
 ```c
 
 enum barva {
-CERVENA, // 1 (tuším že se startuje od jedničky)
-CERNA, // 2
-ZLUTA, // 3
+CERVENA, // 0 začíná se od nuly
+CERNA, // 1
+ZLUTA, // 2
 MODRA = 5 // hodnotu lze i manuálně přiřadit
 }
 ```
