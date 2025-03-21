@@ -152,7 +152,7 @@ Z obrázku můžeme vyčíst že **primitivní datové typy** jako je právě in
 a **referenční** mají "**zástupce**" v **zásobníku**, který ukazuje na jejich **data**, které jsou v **haldě**
 
 Proč je **zásobník zeleně**? a proč **halda červeně**?
-zjednodušeně **zásobník** je **rychlý**, ale má **omezenou paměť**, proto se **dlouhé data** jako člověk(jmono, příjmení, věk, váha adresa, ....) ukládají do haldy a by měl procesor rychlejší přístup k podstatnějším věcem a navíc zvětšili místo v paměti, které můžeme použít (halda má **mnohem víc místa**, ale je **pomalejší** )
+zjednodušeně **zásobník** je **rychlý**, ale má **omezenou paměť**, proto se **dlouhé data** jako člověk(jméno, příjmení, věk, váha adresa, ....) ukládají do haldy aby měl procesor rychlejší přístup k podstatnějším věcem a navíc zvětšili místo v paměti, které můžeme použít (halda má **mnohem víc místa**, ale je **pomalejší** )
 
 **více v poznámce o Pojmech**
 
