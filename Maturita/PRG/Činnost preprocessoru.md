@@ -1,7 +1,7 @@
 akce, které vykonává preprocesor ještě před začátkem kompilace
 
 mezi tyto akce patří:
-## 1. vložení hlavičkových souborů (File inclusion)
+## 1. Vložení hlavičkových souborů (File inclusion)
 
 ```c
 // main.c
@@ -9,7 +9,7 @@ mezi tyto akce patří:
 #include "nazevsouboru"
 ```
 
-hledá se soubor **s názvem "nazevsouboru"** tam kde je soubor main.c umístěn, jestliže  takový soubor **neexistuje**, **nebo** jsou místo uvozovek **<  >**, hledá se soubor podle pravidla závislého na operačním systému (nejčastěji v systémové proměnné **path**)
+hledá se soubor **s názvem "nazevsouboru"** v **domovském adresáři** (tam kde je soubor main.c) , jestliže  takový soubor **neexistuje**, **nebo** jsou místo uvozovek **<  >**, hledá se soubor podle pravidla závislého na operačním systému (nejčastěji v systémové proměnné **path**)
 ## 2. Nahrazení maker (Macro substitution)
 nahradí makra v programu textem
 
@@ -26,7 +26,7 @@ definice makra
 
 ```
 
-makra s proměnnou, i když vypadají jako funkce, jsou to pouze makra
+makra s proměnnou i když vypadají jako funkce, jsou to pouze makra
 
 **před činností preprocesoru**:
 ```c
@@ -43,7 +43,7 @@ printf("%d", ((10) > (11) ? (10) : (11)) );
 
 ```
 
-## 3. podmíněné zpracování (conditional inclusion)
+## 3. Podmíněné zpracování (Conditional inclusion)
 Nejčastěji používaný příklad je ošetření pro includnutí stejných souborů vícekrát
 
 ```c
