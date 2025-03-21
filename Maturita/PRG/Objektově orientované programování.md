@@ -10,10 +10,9 @@ OOP - způsob programování (životní styl), který strukturuje data a procedu
     - Přetížení metody
   - Vlastnosti(Properties)
 - Pilíře OOP
-  - Zapouzdření (gettery, settery, private...)
+  - Zapouzdření(gettery, settery, private...)
   - Polymorfismus(rozhraní, abstraktní třídy)
   - Dědičnost(rodič a potomek třídy)
-  - 
 ## Třída 
 je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běh mluv ... další nesmysly a data jako jméno výška ...
 třída určuje co bude každá instance mít za data(atributy), a metody 
@@ -44,7 +43,7 @@ máme 5 základních druhů:
 ### Implicitní (nebo také "Defaultní")
   - Nemusí být definován ručně, po vytvoření třídy již existuje.
   - Nemá žádné parametry.
-  - Jeho funkcí je inicializovat objekt výchozími hodnotami.
+  - Jeho funkcí je inicializovat objekt výchozími hodnotami(jednoduché datové typy - 0, referenční - null).
   - Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
   - Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
 ### Explicitní
@@ -80,9 +79,18 @@ tvoříme klíčovým slovem **new()**, které alokuje pamět pro objekt a také
 Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 ```
 
+## Pilíře OOP
+
+### Klíčová slova
+**final**
+- final class - nelze dále dědit
+-  final method - metody nelze dále přepisovat/předefinovat(override)
+-  final variable - konstantní proměnná
+**extends** - 
+**implements** -
 ## Zapouzdření
 způsob jak zabezpečit data 
-"znepřístupnění" dat mimo třídu, ke kterým by uživatel neměl mít přístup
+"znepřístupnění" dat mimo třídu, ukterých dává smysl že k nim uživatel nemá přístup
 - **gettery** - metody pro vracení hodnoty atributu
 - **settery** - nastavení hodnoty atributu
 
@@ -92,12 +100,12 @@ způsob jak zabezpečit data
 - public - přístupná pro všechny
 dáváme přístup k věcem, jen u těch u kterých je to nutné
 
-
-Dědičnost
-potomek - třída, která dědí  z nadřazené třídy
-dědí se atributy a metody 
-
-polymorfismus 
+## Dědičnost
+Vztah mezi rodičem(nadřazená třída) a potomkem(podřazená třída).
+Potomek ze svého rodiče dědí metody a atributy
+Třída může mít **maximálně jednoho** rodiče, ale potomků může mít podle potřeby
+dědičnost je zajištěna klíčovým slovem extends
+polymorfismus
 
 classa zvíře, každé zvíře dělá nějaký zvuk, ale jiný polymorfismus nám umožnuje zavolat metodu specifickou pro dané zvíře (chro pro prase)
 
