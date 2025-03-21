@@ -14,8 +14,8 @@ OOP - způsob programování (životní styl), který strukturuje data a procedu
   - Polymorfismus(rozhraní, abstraktní třídy)
   - Dědičnost(rodič a potomek třídy)
 ## Třída 
-je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běh mluv ... další nesmysly a data jako jméno výška ...
-třída určuje co bude každá instance mít za data(atributy), a metody 
+je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běhej, mluv ... další nesmysly a data jako jméno, výška ...
+třída určuje co bude každá instance mít za data(atributy) a metody  
 ```JAVA
 public class Automobil
 {
@@ -43,7 +43,7 @@ máme 5 základních druhů:
 ### Implicitní (nebo také "Defaultní")
   - Nemusí být definován ručně, po vytvoření třídy již existuje.
   - Nemá žádné parametry.
-  - Jeho funkcí je inicializovat objekt výchozími hodnotami(jednoduché datové typy - 0, referenční - null).
+  - Jeho funkcí je inicializovat objekt výchozími hodnotami (jednoduché datové typy - 0, referenční - null).
   - Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
   - Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
 ### Explicitní
@@ -86,37 +86,39 @@ Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 - final class - nelze dále dědit
 -  final method - metody nelze dále přepisovat/předefinovat(override)
 -  final variable - konstantní proměnná
+
 **extends** - 
+
 **implements** -
 ## Zapouzdření
 způsob jak zabezpečit data 
-"znepřístupnění" dat mimo třídu, ukterých dává smysl že k nim uživatel nemá přístup
+"znepřístupnění" dat mimo třídu, u kterých dává smysl že k nim uživatel nemá přístup
 - **gettery** - metody pro vracení hodnoty atributu
 - **settery** - nastavení hodnoty atributu
 
-### Modifikátory přístupu(access modifiers)
+### Modifikátory přístupu (access modifiers)
 - private - přístupné jen v rámci třídy, kde byl atribut vytvořen
 - protected - přístupné jen pro potomky
 - public - přístupná pro všechny
 dáváme přístup k věcem, jen u těch u kterých je to nutné
 
 ## Dědičnost
-Vztah mezi rodičem(nadřazená třída) a potomkem(podřazená třída).
+Vztah mezi rodičem (nadřazená třída) a potomkem (podřazená třída).
 Potomek ze svého rodiče dědí metody a atributy
 Třída může mít **maximálně jednoho** rodiče, ale potomků může mít podle potřeby
 dědičnost je zajištěna klíčovým slovem extends
-polymorfismus
+**polymorfismus**
 
-classa zvíře, každé zvíře dělá nějaký zvuk, ale jiný polymorfismus nám umožnuje zavolat metodu specifickou pro dané zvíře (chro pro prase)
+například: classa zvíře, každé zvíře dělá nějaký zvuk, ale jiný polymorfismus nám umožnuje zavolat metodu specifickou pro dané zvíře (chro pro prase)
 
-nadřazená třída určí metodu (případně určí defaultní chování), a je na každém objektu jakým způsobem bude implementován v případě prasete to bude sout("chro") u kocky třeba sout(kňá) ....
+nadřazená třída určí metodu (případně určí defaultní chování), a je na každém objektu jakým způsobem bude implementován v případě prasete to bude sout ("chro") u kocky třeba sout ("ˇkňa") ....
 
 
-abstraktní třída
+### Abstraktní třída
 
 je třída, pro kterou nedává smysl vytvářet z ní objekt
 
-například vozdilo, mohlo by to být letadlo auto, kamion(tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb bla bla)
+například: vozdilo bude vždy konkrétní a nikdy nebudeme chtít vytvořit instatnci (objekt) vozidlo, mohlo by to být letadlo, auto, kamion (tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb, ...)
 
 
-interfacy v podstatě umožnuje inheritova více tříd
+interface v podstatě umožnuje zdědit více tříd
