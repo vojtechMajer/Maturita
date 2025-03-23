@@ -90,7 +90,7 @@ Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 **implements** -
 ## Zapouzdření
 způsob jak zabezpečit data 
-"znepřístupnění" dat mimo třídu, ukterých dává smysl že k nim uživatel třídy (jiný programátor, který používá vaši třídu, jako modul/knihovnu) nemá přístup
+"znepřístupnění" dat mimo třídu, u kterých dává smysl že k nim uživatel třídy (jiný programátor, který používá vaši třídu, jako modul/knihovnu) nemá přístup
 - **gettery** - metody pro vracení hodnoty atributu
 - **settery** - nastavení hodnoty atributu
 
