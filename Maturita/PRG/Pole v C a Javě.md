@@ -18,12 +18,14 @@ int hodnotaPrvnihoPrvku = *(pole + 0); // 1
 ```c
 int pole[9] = {1,2,3,4,5,6,7,8,9};
 // představme si že prvke 1 má adres 0x0000 (hexadecimalne)
+// další prvek tak má adresu 0x0004 = 0x0000 + 0x0004
 int hodnotaPrvnihoPrvku = *( (int*) ((char*)pole + 1 * sizeof(int)) ); // 2
 ```
 nelekejte se, tohle všechno za nás udělá compiler a stačí to napsat takto:
 ```c
 int pole[9] = {1,2,3,4,5,6,7,8,9};
 // představme si že prvke 1 má adres 0x0000 (hexadecimalne)
+// další prvek tak má adresu 0x0004 = 0x0000 + 0x0004
 int hodnotaPrvnihoPrvku = *(pole+1); // 2
 ```
 Důležité je si odnést že kdyby byly různé datové typy nebo kdyby bylo pole rozděleno do několika segmentů nešlo by pole používat.
@@ -33,6 +35,7 @@ u tohoto zápisu si musíme uvědomit že pole se **indexuje od 0**
 ```c
 int pole[9] = {1,2,3,4,5,6,7,8,9};
 // představme si že prvke 1 má adres 0x0000 (hexadecimalne)
+// další prvek tak má adresu 0x0008 = 0x0000 + 0x0004*2
 int hodnotaPrvnihoPrvku = pole[2] // 3
 ```
 
