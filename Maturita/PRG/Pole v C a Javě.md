@@ -4,7 +4,7 @@ Dále u pole platí že jsou data uloženy hned za sebou, takže jsou **konsekut
 proměnná **pole** je pointer, který ukazuje na první hodnotu prvku
 
 Z řazení datových typů také víme že jsou data homogenní, čili stejného datového typu.
-![Pole](pole.jpg)
+![Pole](./../pole.jpg)
 
 ## Jak teda vypadá Přístup k prvkům pole? (Pointerová akrobacie)
 jestli víme že adresa prvního prvku je začátek pole tak k prvnímu poli se dostaneme takto
@@ -75,8 +75,8 @@ int main(void)
 }
 ```
 
-![Halda a stack](Halda_a_stack.jpg)
+![Halda a stack](./../Halda_a_stack.jpg)
 
 
-
+## Pole v jave
 
