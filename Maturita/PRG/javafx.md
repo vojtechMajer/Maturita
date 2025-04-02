@@ -7,8 +7,6 @@ FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text fi
 fileChooser.getExtensionFilters().add(extFilter);
 ```
   
-
-  
 ### import
 ```java
 FileChooser fileChooser = new FileChooser();
