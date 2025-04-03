@@ -1,7 +1,5 @@
 
-**proměnná** -> pojmenované místo v paměti, přístupné pomocí **identifikátoru** 
-
-
+**proměnná** -> pojmenované místo v paměti, přístupné pomocí **identifikátoru** (název)
 ## Deklarace Inicializace a definice
 
 **deklarace** - prohlášení - určení identifikátoru (jména proměnné) a datového typu,  **! ne** hodnoty
@@ -47,7 +45,7 @@ void main
 		int b = 5;// vzniká zde 
 		int* x = malloc(sizepf(int)*1);
 		*x = 2;
-		} // tady už b neexistuje // pointer x už neexistuje, ale data pořád zůstavají v haldě protože nebyly "vyčistěny" free()
+	} // tady už b neexistuje // pointer x už neexistuje, ale data pořád zůstavají v haldě protože nebyly "vyčistěny" free()
 	
 	printf("%d", a);
 	
@@ -80,7 +78,7 @@ extern static a register
 
 auto int moje_promenna1; // mimo stack i haldu (datový segment); random;
 // AUTO je to samé jako nespecifikovat paměťovou třídu
-auto int a; === int a;
+auto int a; // === int a;
 
 
 extern int promenna_definovana_jinde; // mimo stack u haldu; 0

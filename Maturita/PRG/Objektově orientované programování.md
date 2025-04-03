@@ -86,8 +86,8 @@ Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 - final class - nelze dále dědit
 -  final method - metody nelze dále přepisovat/předefinovat(override)
 -  final variable - konstantní proměnná
-**extends** - 
-**implements** -
+**extends** - zajišťuje dědění
+**implements** - zajišťuje rozhraní
 ## Zapouzdření
 způsob jak zabezpečit data 
 "znepřístupnění" dat mimo třídu, u kterých dává smysl že k nim uživatel třídy (jiný programátor, který používá vaši třídu, jako modul/knihovnu) nemá přístup
@@ -109,14 +109,51 @@ polymorfismus
 
 classa zvíře, každé zvíře dělá nějaký zvuk, ale jiný polymorfismus nám umožnuje zavolat metodu specifickou pro dané zvíře (chro pro prase)
 
-nadřazená třída určí metodu (případně určí defaultní chování), a je na každém objektu jakým způsobem bude implementován v případě prasete to bude sout("chro") u kocky třeba sout(kňá) ....
 
+## Polymorfismus
+nadřazená třída/rozhraní nám určí metodu (případně určí její defaultní chování), a je na každém objektu jakým způsobem bude implementovat danou metodu.
+**Příklad.:**
+```Java
 
-abstraktní třída
+abstract class Zvire
+{
+	public abstract void udelejZvuk(/*tady můžou být atributy jako obvykle*/);
+}
 
-je třída, pro kterou nedává smysl vytvářet z ní objekt
+interface Letavec{
+	public void mavniKridly(); 
+}
 
-například vozdilo, mohlo by to být letadlo auto, kamion(tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb bla bla)
+class Prase extends Zvire{
+	public void udelejZvuk()
+	{
+		System.out.Println("Chro chro");
+	} 
+}
 
+// Ftip
+class Tucnak extends Zvire implements Letavec{
+	public void udelejZvuk()
+	{
+		System.out.Println("tuč tuč");
+	}
+	
+	public void mavniKridly()
+	{
+		System.out.Println("mav mav");
+	}
+}
 
-interfacy v podstatě umožnuje inheritova více tříd
+class Kocka extends Zvire{
+	public void udelejZvuk()
+	{
+		System.out.Println("kňá");
+	} 
+}
+```
+
+/// Uvést reálný příklad polymorfismu
+### abstraktní třída
+je třída, pro kterou **ne**dává smysl vytvářet z ní objekt, určuje jaké metody musí implementovat její potomci
+
+například **vozdilo**, mohlo by to být letadlo, auto nebo kamion(tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb bla bla)

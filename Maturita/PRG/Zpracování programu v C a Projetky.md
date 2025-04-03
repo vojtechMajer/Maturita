@@ -1,9 +1,8 @@
-![[Pasted image 20250211112747.png]]
-
 ## Textový editor
 slouží k napsání zdrojového kódu (\*.c)
+![zpracovani](zpracovaniProgramu.png)
 ## Preprocesor
-[[Činnost preprocessoru]]
+[činnosti preprocesoru](Činnost%20preprocessoru)
 
 ## Compiler (překladač)
 přeloží zdrojový kód do relativního kódu (adresy ještě nejsou známy, takže se použijí adresy pomocné tzv. relativní )
@@ -23,4 +22,9 @@ kompilované jazyky jsou obvykle rychlejší, ale je třeba je kompilovat specif
 Interpretované potřebují interpreter, který musí být nainstalovaný na cílovém zařízení
 
 ## Oddělený překlad
-výhoda je že není třeba kompilovat každý soubor znova a znova, ale jenom změněné, tato výhoda se začíná ukazovat více až při větších projektech
+výhoda je že není třeba kompilovat každý soubor znova a znova, ale jenom změněné, tato výhoda se začíná ukazovat více až při větších projektech.
+
+## Zdrojové(.c) a hlavičkové soubory(.h)
+
+Zdrojové - obsahují implementace
+hlavičkové - obsahují deklarace
