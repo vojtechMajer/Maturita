@@ -157,3 +157,41 @@ class Kocka extends Zvire{
 je třída, pro kterou **ne**dává smysl vytvářet z ní objekt, určuje jaké metody musí implementovat její potomci
 
 například **vozdilo**, mohlo by to být letadlo, auto nebo kamion(tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb bla bla)
+
+## Exceptions(Vyjímky)
+Zachycení
+```Java
+// zachytáváme vyjímku
+try{
+	del(0,5);
+...
+}
+// vyhodnocujeme vyjímku
+catch(DelisNulouException e)
+{
+print(...);
+... // cokoliv dalšího
+}
+```
+**Předání**
+```Java
+void funkce() throws DelisNulouException
+{
+	del(0,5);
+	return;
+}
+
+```
+
+**Vyvolání**
+```Java
+int del(int jmenovatel,int citatel)
+{
+	if(jmenovatel == 0)
+	{
+		throw new DelisNulouException;
+	}
+return citatel/jmenovatel;
+}
+```
+
