@@ -21,6 +21,7 @@ klasické operace sčítání odečítání ....
 **!!! Nelze získat zbytek po dělení, operace modulo (%)**
 ### Celá čísla (int, char, ...)
 klasické operace
+jsou ordinální, lze je použít ve switchi case, enum
 **Celočíselné dělení (/)**
 **!!! Lze použít modulo (%)** 
 
