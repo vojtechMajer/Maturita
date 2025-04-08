@@ -159,27 +159,43 @@ je třída, pro kterou **ne**dává smysl vytvářet z ní objekt, určuje jaké
 například **vozdilo**, mohlo by to být letadlo, auto nebo kamion(tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb bla bla)
 
 ## Exceptions (Vyjímky)
-Je mechanizmus, který slouží k zachycení, vyhodnocení, nebo předání vyjímky(Chyby). 
-Každá vyjímka dědí z nadřazené třídy `Exception`.
-Například vyjímky, které řeží chyby vstupů a výstup se nazývají IOException
-V jazyce C tohoto můžeme docílit pomocí alternativy(větvení)
-
-
-**Zachycení vyjímky**
+Je potomek třídy `Exception` ,který je vyhozen v případě chyby buď samotným programem nebo programátorem( viz vytvoření vlastní vyjímky)
+Například vyjímky, které řeží chyby vstupů a výstupů se nazývají IOException.
+V jazyce C nemáme možnost odchytit vyjímky musíme si všechno ručně ošetřit pomocí alternativy(větvení)
+### Vysvětlení pojmů (klíčových slov) pro odchycení a vyhodnocení vyjímky
+- **try** => blok kodu ve kterém odchytáváme vyjímku
+- **catch** => blok kodu kde je vyjímka zpracována
+  - můžeme mít libovolný počet catchů ale pozor záleží na pořadí
+  	- catch bez parametrů  - vyjímka bude odchycena ale nemůžeme například vyhodnotit typ vyjímky nebo message vyjímky
+  	- catch s parametry - můžeme zde specifikovat odchycení jen konkrétních vyjímek a máme přístup ke všem datům o zachycené vyjímce
+  - poté co je vyjímka vržena metoda pokračuje už **jen** do bloku finally
+- **finally** => blok kodu co bude spuštěn v každém připadě
+  	- vhodné třeba v případě obeznámení uživatele o tom že operace proběhla
+### Zachycení vyjímky
 ```Java
-// zachytáváme vyjímku
-try{
-	del(0,5);
-...
+try {
+    del(0, 5); // pokus o dělení nulou
 }
-// vyhodnocujeme vyjímku
-catch(DelisNulouException e)
+// vyhodnocujeme vlastní vyjímku výjimku
+catch (VlastniVyjimka e) { // musí odpovídat názvu vlastní výjimky -> POZOR pokud jako parametr catch specifikujeme konkrétní vyjímku ostatní nebudou zachyceny 
+    System.out.println("Vlastní vyjímka byla vyhozena: "+e.getMessage());
+}
+//pro všechny ostatní vyjímky 
+catch(Exception e) //můžeme mít libovolný počet catchů ale pozor záleží na pořadí
 {
-print(...);
-... // cokoliv dalšího
+	System.out.println("Byla vyhozena vyjímka" + e.getMessage());
+}
+//v tomto případě tento catch nikdy vyjímku nezachytí vyjímka bude zachycena nejpozději v druhém catchi
+catch
+{
+	System.out.println("Byla vyhozena nějaká vyjímka");
+}
+// kód, který se provede vždy
+finally {
+    System.out.println("Operace proběhla");
 }
 ```
-**Předání** - necháme vyjímku vyřešit toho, co metodu volá
+### Předání - necháme vyjímku vyřešit toho, co metodu volá
 ```Java
 void funkce() throws DelisNulouException
 {
@@ -188,16 +204,23 @@ void funkce() throws DelisNulouException
 }
 
 ```
-
-**Vyvolání** - při tvorbě vlastních vyjímek musíme určit kdy nastane
+### Vytvoření vlastní vyjímky
+- vyjímka jako každá jiná musí dědit ze třídy Exception
 ```Java
-int del(int jmenovatel,int citatel)
-{
-	if(jmenovatel == 0)
-	{
-		throw new DelisNulouException;
-	}
-return citatel/jmenovatel;
+// Vlastní výjimka
+public class VlastniVyjimka extends Exception {
+    public VlastniVyjimka() {
+        super("záporácká exceptiona"); // volá konstruktor nadřazené třídy Exception s textem zprávy
+    }
+}
+
+```
+### Vyvolání - při tvorbě vlastních vyjímek musíme určit kdy nastane
+```Java
+public int del(int jmenovatel, int citatel) throws VlastniVyjimka {
+    if (jmenovatel == 0) {
+        throw new VlastniVyjimka();
+    }
+    return citatel / jmenovatel;
 }
 ```
-
