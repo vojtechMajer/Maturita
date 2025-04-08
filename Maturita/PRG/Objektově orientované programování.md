@@ -82,32 +82,33 @@ Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 ## Pilíře OOP
 
 ### Klíčová slova
-final class
-- Třídu nelze dále dědit (nemůže mít potomky)
-Příklad:
-```Java
-final class Auto { ... }
-class SportovniAuto extends Auto {} // ❌ Chyba – Auto je final
-```
-final - pro metodu
-- Metodu nelze přepsat (@Override) v podtřídách
-Příklad:
-```Java
-class Zvire {
-    final void mluv() { ... }
-}
-class Pes extends Zvire {
-    @Override
-    void mluv() {} // ❌ Chyba – metoda je final
-}
-```
-final - pro proměnnou
-- Proměnná, která musí být inicializována a už ji nelze změnit (chová se jako konstanta)
-Příklad:
-```Java
-final int cislo = 10;
-cislo = 20; // ❌ Chyba – final proměnná nelze přepsat
-```
+- **final**
+	- final class
+		- Třídu nelze dále dědit (nemůže mít potomky)
+		Příklad:
+		```Java
+		final class Auto { ... }
+		class SportovniAuto extends Auto {} // ❌ Chyba – Auto je final
+		```
+	- final - pro metodu
+		- Metodu nelze přepsat (@Override) v podtřídách
+		Příklad:
+		```Java
+		class Zvire {
+		    final void mluv() { ... }
+		}
+		class Pes extends Zvire {
+  		    @Override
+   		 void mluv() {} // ❌ Chyba – metoda je final
+		}
+		```
+	- final - pro proměnnou
+		- Proměnná, která musí být inicializována a už ji nelze změnit (chová se jako konstanta)
+		Příklad:
+		```Java
+		final int cislo = 10;
+		cislo = 20; // ❌ Chyba – final proměnná nelze přepsat
+		```
   
 - **extends** - zajišťuje dědičnost z rodičovských tříd
 - **implements** - používáno v kontextu s rozhraními - říkáme tím jaké rozhraní bude třída implementovat
