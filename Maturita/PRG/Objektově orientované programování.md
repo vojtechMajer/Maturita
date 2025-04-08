@@ -82,13 +82,36 @@ Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 ## Pilíře OOP
 
 ### Klíčová slova
-**final**
-- final class - nelze dále dědit
--  final method - metody nelze dále přepisovat/předefinovat(override)
--  final variable - konstantní proměnná
+final class
+- Třídu nelze dále dědit (nemůže mít potomky)
+Příklad:
+```Java
+final class Auto { ... }
+class SportovniAuto extends Auto {} // ❌ Chyba – Auto je final
+```
+final - pro metodu
+- Metodu nelze přepsat (@Override) v podtřídách
+Příklad:
+```Java
+class Zvire {
+    final void mluv() { ... }
+}
+class Pes extends Zvire {
+    @Override
+    void mluv() {} // ❌ Chyba – metoda je final
+}
+```
+final - pro proměnnou
+- Proměnná, která musí být inicializována a už ji nelze změnit (chová se jako konstanta)
+Příklad:
+```Java
+final int cislo = 10;
+cislo = 20; // ❌ Chyba – final proměnná nelze přepsat
+```
   
-**extends** - zajišťuje dědění
-**implements** - zajišťuje rozhraní
+- **extends** - zajišťuje dědičnost z rodičovských tříd
+- **implements** - používáno v kontextu s rozhraními - říkáme tím jaké rozhraní bude třída implementovat
+  
 ## Zapouzdření
 způsob jak zabezpečit data 
 "znepřístupnění" dat mimo třídu, u kterých dává smysl že k nim uživatel třídy (jiný programátor, který používá vaši třídu, jako modul/knihovnu) nemá přístup
