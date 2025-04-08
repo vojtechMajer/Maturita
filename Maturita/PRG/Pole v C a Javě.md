@@ -52,8 +52,8 @@ A halda je výrazně větší a dokáže tedy uložit více věcí, dat, a naví
 Aby zásobník mohl být tak rychlý jak je, tak vyžaduje optimalizaci compilerem, která není možná v moment, kdy potřebujeme haldu dynamicky měnit.
 ### Pole v zásobníku
 - je třeba vědět jeho velikost předem.
-- rychlejší přístup/ přidání na stack (data se pushnou na stack)
-- **může** zabírat velikou část stacku (hodně hodnot, může dojít k stack overflow)
+- rychlejší přístup/ přidání do zásobníku (data se pushnou do zásobníku)
+- **může** zabírat velikou část zásobníku (hodně hodnot, může dojít k přetečení zásobníku)
 - nelze dynamicky měnit
 ```c
 int main(void)
@@ -65,7 +65,7 @@ int main(void)
 ### Pole na haldě
 - není třeba vědět velikost
 - pomalejší alokace (allocator musí projet hladu najít dostatečně velké místo, a uložit data viz obr)
-- pomalejší přístup (přes pointer,který je na stacku)
+- pomalejší přístup (přes pointer,který je v zásobníku)
 - lze změnit velikost (ale často se pole musí přesunout na jiné místo v haldě)
 ```c
 int main(void)
