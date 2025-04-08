@@ -4,18 +4,18 @@
 OOP - způsob programování (životní styl), který strukturuje data a procedury (metody/operace) do tříd
 - Třída
   - Konstruktor
-    - Implicitní(Defaultní), Explicitní, Kopírovací, Inicializační, Vlastní(udělat cokoliv navíc) 
+   - Implicitní(Defaultní), Explicitní, Kopírovací, Inicializační, Vlastní(udělat cokoliv navíc) 
   - Objekt
   - Metoda
-    - Přetížení metody
+   - Přetížení metody
   - Vlastnosti(Properties)
 - Pilíře OOP
   - Zapouzdření(gettery, settery, private...)
   - Polymorfismus(rozhraní, abstraktní třídy)
   - Dědičnost(rodič a potomek třídy)
 ## Třída 
-je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běh mluv ... další nesmysly a data jako jméno výška ...
-třída určuje co bude každá instance mít za data(atributy), a metody 
+je teda seskupení dat a operací, které spolu dávají smysl, například třída člověk bude mít operaci běhej, mluv ... další nesmysly a data jako jméno, výška ...
+třída určuje co bude každá instance mít za data(atributy) a metody  
 ```JAVA
 public class Automobil
 {
@@ -43,7 +43,7 @@ máme 5 základních druhů:
 ### Implicitní (nebo také "Defaultní")
   - Nemusí být definován ručně, po vytvoření třídy již existuje.
   - Nemá žádné parametry.
-  - Jeho funkcí je inicializovat objekt výchozími hodnotami(jednoduché datové typy - 0, referenční - null).
+  - Jeho funkcí je inicializovat objekt výchozími hodnotami (jednoduché datové typy - 0, referenční - null).
   - Volá konstruktor nadřazené třídy (pokud žádný konstruktor nadřazené třídy není definován, použije se konstruktor bez parametrů z třídy Object). //**toto je gpťácký bod pozor**
   - Pokud je již vytvořen jiný konstruktor (bez parametrů) implicitní konstuktor není k dispozici.
 ### Explicitní
@@ -86,25 +86,28 @@ Automobil auto = new Automobil("Škoda Fabia", Barva.Pistáciová, 50);
 - final class - nelze dále dědit
 -  final method - metody nelze dále přepisovat/předefinovat(override)
 -  final variable - konstantní proměnná
+  
 **extends** - zajišťuje dědění
 **implements** - zajišťuje rozhraní
 ## Zapouzdření
 způsob jak zabezpečit data 
 "znepřístupnění" dat mimo třídu, u kterých dává smysl že k nim uživatel třídy (jiný programátor, který používá vaši třídu, jako modul/knihovnu) nemá přístup
+
 - **gettery** - metody pro vracení hodnoty atributu
 - **settery** - nastavení hodnoty atributu
 
-### Modifikátory přístupu(access modifiers)
+### Modifikátory přístupu (access modifiers)
 - private - přístupné jen v rámci třídy, kde byl atribut vytvořen
 - protected - přístupné jen pro potomky
 - public - přístupná pro všechny
 dáváme přístup k věcem, jen u těch u kterých je to nutné
 
 ## Dědičnost
-Vztah mezi rodičem(nadřazená třída) a potomkem(podřazená třída).
+Vztah mezi rodičem (nadřazená třída) a potomkem (podřazená třída).
 Potomek ze svého rodiče dědí metody a atributy
 Třída může mít **maximálně jednoho** rodiče, ale potomků může mít podle potřeby
 dědičnost je zajištěna klíčovým slovem extends
+
 Například máme třídu Brainrot ze které můžeme dědit ve třídách ItalianBrainrot nebo AIKocicky... každá z těchto tříd bude mít možnost upravit si chováí rodiče podle sebe -> každý brainrot má jiný negativní dopad.
 
 ## Polymorfismus
@@ -119,6 +122,7 @@ abstract class Zvire {
     public Zvire(String jmeno) {
         this.jmeno = jmeno;
     }
+
 
     void zvuk() {
         System.out.println("Můj mazlíčk "+ this.jmeno + " říka: " );
@@ -142,12 +146,14 @@ Zvire z = new Pes();
 z.zvuk(); // ➝ Haf haf
 ```
 
+
 ### Abstraktní třída
 je třída ze které nemůžeme explicitně vytvořit objekt můžeme z ní pouze dědit.
 Vytváříme pomocí klíčového slova 'abstract'
 Důležité je porozumět rozdílu oproti rozhraní:
 - rozhraní nemůže mít vlastnosti ani implementaci metod -> toto si řeší každý potomek sám, zatož abstraktní třída se chová jako všechny ostatní třídy
 - nevýhodou abstaktní třídy je jako u všech rodičovských tříd -> můžu dědit jen z jedné (absttraktní) třídy 
+
 
 například **vozdilo** by mohlo být letadlo, auto nebo kamion, proto si vytvoříme třídu vozidlo a třídy jako letadlo nebo auto z ní můžou dědit.
 všechno s jinými parametry, ale stejným základem (vlastnost kapacita lidí, metoda pohyb a tak dále)

@@ -33,7 +33,7 @@ float d = 5;
 
 // dělení a zbytek celého čísla
 int c = 5/2; // vysledek je 2
-int zbytek = 5%2;
+int zbytek = 5%2; // vysledek je 1
 
 // POZOR POZOR POZOR POZOR
 // I když by se mohlo zdát že používáme reálné dělení, protože máme v levo float
@@ -92,10 +92,12 @@ Tedy **char** (1B) má 256 různých znaků = ascii tabulka má 256 různých zn
 enum je zajištěn **unsigned intem** jeho rozsah jsou tedy kladná celá čísla (maximálně 4294967295) a nula
 ```c
 enum barva {
-CERVENA, // 0 (tuším že se startuje od jedničky)
+
+CERVENA, // 0 začíná se od nuly
 CERNA, // 1
 ZLUTA, // 2
-MODRA = 5 // hodnotu lze i ručně přiřadit
+MODRA = 5 // hodnotu lze i manuálně přiřadit
+
 }
 ```
 
@@ -160,7 +162,8 @@ Z obrázku můžeme vyčíst že **primitivní datové typy** jako je právě in
 a **referenční** mají "**zástupce**" v **zásobníku**, který ukazuje na jejich **data**, které jsou v **haldě**
 
 Proč je **zásobník zeleně**? a proč **halda červeně**?
-zjednodušeně **zásobník** je **rychlý**, ale má **omezenou paměť**, proto se **dlouhé data** jako člověk(jmeno, příjmení, věk, váha adresa, ....) ukládají do haldy a by měl procesor rychlejší přístup k podstatnějším věcem a navíc zvětšili místo v paměti, které můžeme použít (halda má **mnohem víc místa**, ale je **pomalejší** )
+
+zjednodušeně **zásobník** je **rychlý**, ale má **omezenou paměť**, proto se **dlouhé data** jako člověk(jméno, příjmení, věk, váha adresa, ....) ukládají do haldy aby měl procesor rychlejší přístup k podstatnějším věcem a navíc zvětšili místo v paměti, které můžeme použít (halda má **mnohem víc místa**, ale je **pomalejší** )
 
 **více v poznámce o Pojmech**
 
