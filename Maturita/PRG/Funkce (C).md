@@ -4,8 +4,8 @@ Funkce je logický blok kódu, který můžeme volat vícekrát, takže není t�
 Funkce má 2 části: **Hlavičku** a **tělo**
 funkce taky zabírají paměťové místo
 ## Hlavička
-**hlavička funkce** obsahuje výstupní a vstupní parametry a jejich datové typy
-**tělo funkce** - vykonává cokoliv co je třeba a v 
+- **hlavička funkce** obsahuje výstupní a vstupní parametry a jejich datové typy
+- **tělo funkce** - vykonává cokoliv co je třeba a v 
 ## Deklarace funkce 
 deklarací funkce je hlavička a v jazyce C se musí nacházet nad místem, kde funkci voláme
 
