@@ -79,7 +79,7 @@ int main(void)
 ```
 proměnná **pole** je statická(v **zásobníku**) proměnná, která odkazuje na dynamickou proměnnou `(malloc(sizeof(int) * 9 ))` (na **haldě**)
 
-![Halda a stack](./../Halda_a_stack.jpg)
+![Zásobnik a halda](./zasobnik_a_halda.png)
 
 
 ## Pole v jave
