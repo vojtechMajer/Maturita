@@ -8,6 +8,7 @@ např.: for, while, int, do, if, switch, unsigned ..., **nesmí být použity ja
 
 **Kvalifikátor** -> např.: const 
 
+**paměťová třída** -> register (nelze odkázat pointerem), auto, global
 ### Modifikátor (modifier)
 Modifikují původní **velikost**/**znaménko**
 př.: unsigned,  long, long long, short  ...

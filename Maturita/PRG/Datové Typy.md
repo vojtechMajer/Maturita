@@ -5,21 +5,23 @@ Například:
 - do celočíselného datového typu **ne**půjde uložit reálné číslo
 - **Nelze** uložit záporné číslo do proměnné s **modifikátorem** unsigned 
 ```c
-// NELZE
-int x = 0.5;
+// Je možné, ALE bude uložená špatná hodnota 1
+int x = 1.5; // výsledek x = 1
 
 // LZE ale bude špatný výsledek
-unsigned int y = -1; // výsledek je Maximální hodnota unsigned intu, kvůli přetečení
+// výsledek je Maximální hodnota unsigned intu, kvůli přetečení
+unsigned int y = -1; // y = 4294967295
 ```
 
 ## Množinu přípustných **operací**
-(float - dělení, nelze zbytek, sčítaní, ... int - dělení beze zbytku, zbytek %, sčítání ...)
+(float - dělení, nelze použít % zbytek, sčítaní, ... int - dělení beze zbytku, zbytek %, sčítání ...)
 ### Reálné čísla (float, double)
 klasické operace sčítání odečítání ....
 **!!! Výsledek dělení je reálné číslo! (/)**
 **!!! Nelze získat zbytek po dělení, operace modulo (%)**
 ### Celá čísla (int, char, ...)
 klasické operace
+jsou ordinální, lze je použít ve switchi case, enum
 **Celočíselné dělení (/)**
 **!!! Lze použít modulo (%)** 
 
@@ -27,17 +29,24 @@ klasické operace
 
 int a = 5;
 int b = 2;
+float d = 5;
 
+// dělení a zbytek celého čísla
 int c = 5/2; // vysledek je 2
 int zbytek = 5%2; // vysledek je 1
 
 // POZOR POZOR POZOR POZOR
-float c = 5/2; // výsledek je taky 2, protože 5 i 2 jsou brány jako INT takže se používá celočíselné dělení
+// I když by se mohlo zdát že používáme reálné dělení, protože máme v levo float
+// není tomu tak. Důvod je že operátor / voláme na dvou Intech a tak se použije celočíselné dělení
 float c = a/b; // 2
+float c = 5/2; // c =2
+// Správné užití by tedy muselo přetopovat alespoň jeden operand na float e.g.
+float d = a/(float)b  // 2.5
 
 // příklad reálného dělení
+float d = d/b // 2.5
 float d /= 2.0; // 2.5
-float d = a/(float)b  // 2.5
+
 
 ```
 
@@ -45,8 +54,7 @@ float d = a/(float)b  // 2.5
 trošku odbočka k operátorům
 operator overload = přetížení operátoru = má jiné funkce pro různé datové typy
 
-
-## Rozsah 
+## Rozsah hodnoty 
 Kolik místa v paměti zabírají, jakou mají přesnost
 B = Byte
 b = bit (0,1)
@@ -80,25 +88,27 @@ Tedy **char** (1B) má 256 různých znaků = ascii tabulka má 256 různých zn
 
 ### Enumy structy a uniony
 
-**enum** je takzvaný výčtový datový typ vyčítá nějaké možnosti pro něco např.:
+**enum** je takzvaný výčtový datový typ vyčte možnosti např.:
+enum je zajištěn **unsigned intem** jeho rozsah jsou tedy kladná celá čísla (maximálně 4294967295) a nula
 ```c
-
 enum barva {
+
 CERVENA, // 0 začíná se od nuly
 CERNA, // 1
 ZLUTA, // 2
 MODRA = 5 // hodnotu lze i manuálně přiřadit
+
 }
 ```
 
 **Struct a union**
 člen (member) - 
-struct zabírá součet svých členů (member) 
+struct zabírá tolik místa v paměti jako součet svých členů v paměti
 ```c
 // cleny structu osoba jsou jmeno, prijmeni, vek, vaha
 
 // Velikost dohromady 38 B
-struct Osoba { 
+struct Osoba {
 char jmeno[10]; // 10B 
 char prijmeni[20] // 20B
 int vek; // 4B
@@ -146,12 +156,13 @@ class Clovek{
 ### Primitivní
 int, char, atd.. čili stejné jako Jednoduché datové typy v jazyce C, nachází se rovnou v zásobníku
 
-
-![[Pasted image 20250106162222.png]]
+![[zasobnik_a_halda_struktura.png]]
+Pozor na obrázku je třída ne struktura, struktura by měla všechny své data v zásobníku
 Z obrázku můžeme vyčíst že **primitivní datové typy** jako je právě int (`int a=10`), se nachází **v zásobníku**
 a **referenční** mají "**zástupce**" v **zásobníku**, který ukazuje na jejich **data**, které jsou v **haldě**
 
 Proč je **zásobník zeleně**? a proč **halda červeně**?
+
 zjednodušeně **zásobník** je **rychlý**, ale má **omezenou paměť**, proto se **dlouhé data** jako člověk(jméno, příjmení, věk, váha adresa, ....) ukládají do haldy aby měl procesor rychlejší přístup k podstatnějším věcem a navíc zvětšili místo v paměti, které můžeme použít (halda má **mnohem víc místa**, ale je **pomalejší** )
 
 **více v poznámce o Pojmech**
