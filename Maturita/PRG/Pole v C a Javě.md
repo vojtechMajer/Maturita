@@ -6,7 +6,7 @@ proměnná **pole** je pointer, který ukazuje na první hodnotu prvku
 Z řazení datových typů také víme že jsou data homogenní, čili stejného datového typu.
 ![Pole](./../pole.jpg)
 
-## Jak teda vypadá Přístup k prvkům pole? (Pointerová akrobacie)
+## Jak teda vypadá Přístup k prvkům pole?
 jestli víme že adresa prvního prvku je začátek pole tak k prvnímu poli se dostaneme takto
 ```c
 int pole[9] = {1,2,3,4,5,6,7,8,9};
@@ -69,7 +69,7 @@ int main(void)
 - lze změnit velikost (ale často se pole musí přesunout na jiné místo v haldě)
 ```c
 int main(void)
-{
+{ 
 	int* pole = malloc(sizeof(int) * 9);
 	// použití
 	// uvolnění paměti a zakotvení
@@ -77,9 +77,28 @@ int main(void)
 	pole = null; // už nebude ukaovat na místo v haldě abychom jej omylem nepoužili
 }
 ```
+proměnná **pole** je statická(v **zásobníku**) proměnná, která odkazuje na dynamickou proměnnou `(malloc(sizeof(int) * 9 ))` (na **haldě**)
 
 ![Halda a stack](./../Halda_a_stack.jpg)
 
 
 ## Pole v jave
+```java
+int[] pole = new int[3] {1,2,3};
+```
 
+int[] je referenční datový typ
+klíčové slovo **new** alokuje místo na haldě
+
+## Array list
+je datová struktura postavená na poli, která navíc od pole umožňuje zvětšovat svou velikost
+
+```Java
+        ArrayList<Integer> list = new ArrayList<>(20); // 20 - ocekávaná velikost. Může pořád vyrůst ještě více
+        list.add(4);  // přidáme na konec (když není prázdný)
+        list.addFirst(2);  // přidat na začátek
+        list.remove(2);  // odstraní podle indexu
+        list.contains(4);  // vrátí true, pokud je v listu hodnota 4
+        list.size();  // vrací počet hodnot v poli
+        System.out.println(list.get(1)); // vypíše druhou hodnotu
+```

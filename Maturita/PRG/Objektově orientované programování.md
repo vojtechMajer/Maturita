@@ -158,8 +158,14 @@ je třída, pro kterou **ne**dává smysl vytvářet z ní objekt, určuje jaké
 
 například **vozdilo**, mohlo by to být letadlo, auto nebo kamion(tyhle třídy by dědily z třídy vozidlo), všechno s jinými parametry, ale stejným základem (kapacita lidí, metoda pohyb bla bla)
 
-## Exceptions(Vyjímky)
-Zachycení
+## Exceptions (Vyjímky)
+Je mechanizmus, který slouží k zachycení, vyhodnocení, nebo předání vyjímky(Chyby). 
+Každá vyjímka dědí z nadřazené třídy `Exception`.
+Například vyjímky, které řeží chyby vstupů a výstup se nazývají IOException
+V jazyce C tohoto můžeme docílit pomocí alternativy(větvení)
+
+
+**Zachycení vyjímky**
 ```Java
 // zachytáváme vyjímku
 try{
@@ -173,7 +179,7 @@ print(...);
 ... // cokoliv dalšího
 }
 ```
-**Předání**
+**Předání** - necháme vyjímku vyřešit toho, co metodu volá
 ```Java
 void funkce() throws DelisNulouException
 {
@@ -183,7 +189,7 @@ void funkce() throws DelisNulouException
 
 ```
 
-**Vyvolání**
+**Vyvolání** - při tvorbě vlastních vyjímek musíme určit kdy nastane
 ```Java
 int del(int jmenovatel,int citatel)
 {
