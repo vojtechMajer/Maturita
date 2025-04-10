@@ -5,10 +5,11 @@ slouží k napsání zdrojového kódu (\*.c)
 [činnosti preprocesoru](Činnost%20preprocessoru)
 
 ## Compiler (překladač)
-přeloží zdrojový kód do relativního kódu (adresy ještě nejsou známy, takže se použijí adresy pomocné tzv. relativní )
+- provede kontrolu syntaktických chyb
+- přeloží zdrojový kód do relativního kódu (adresy ještě nejsou známy, takže se použijí adresy pomocné tzv. relativní )
 
 ## Linker
-změní adresy na absolutní, přidělí adresy i například volaným funkcím z ostatních knihoven, vytváří spustitelný soubor (na windows \*.exe)
+ - změní adresy na absolutní, přidělí adresy i například volaným funkcím z ostatních knihoven, vytváří spustitelný soubor (na windows \*.exe)
 
 ## Debugger 
 ladící program k hledání chyb, prochází program řádek po řádku
