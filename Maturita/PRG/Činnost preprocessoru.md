@@ -52,10 +52,19 @@ Nejčastěji používaný příklad je ošetření pro includnutí stejných sou
 
 ...
 
-
 #endif // tady by skočil preprocessor, kdyby už bylo makro definováno
 ```
 
+**překlad řízený hodnotou makra**
+```c
+#define DEBUG false
+	#IF DEBUG == true
+	...
+	print("debugovaci informace ....");
+	#ELSE
+	...
+	#endif
+```
 
 Jde taky podmíněně zpracovávat platformně specifický kod
 
