@@ -6,12 +6,13 @@ proměnná **pole** je pointer, který ukazuje na první hodnotu prvku
 Z řazení datových typů také víme že jsou data homogenní, čili stejného datového typu.
 ![Pole](./../pole.jpg)
 
-## Jak teda vypadá Přístup k prvkům pole?
+## Jak teda vypadá Přístup k prvkům pole a pointerová aritmetika?
 jestli víme že adresa prvního prvku je začátek pole tak k prvnímu poli se dostaneme takto
 ```c
 int pole[9] = {1,2,3,4,5,6,7,8,9};
 // představme si že prvke 1 má adres 0x0000 (hexadecimalne)
-int hodnotaPrvnihoPrvku = *(pole + 0); // 1
+// příklad pointerové aritmetiky
+int hodnotaPrvnihoPrvku = *(pole + 1); // 2
 ```
 
 **Dále díky homogenitě a konsekutivnosti(jsou za sebou, žádná hodnota není mezi nimi) dat víme že další prvek bude**
