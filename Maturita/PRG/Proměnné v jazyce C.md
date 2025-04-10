@@ -19,10 +19,8 @@ int a = 10;
 
 ## Statické typování
 datový typ je třeba určit předem, a tak i zůstává celý zbytek života
-
-dynamické typování existuje například v javascriptu, typ se může v průběhu měnit
-```js
-var blabla = document.getElemennt....();
+```C
+	int promena = 49;
 ```
 
 
