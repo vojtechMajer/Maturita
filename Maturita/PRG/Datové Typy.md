@@ -84,6 +84,7 @@ Tedy **char** (1B) má 256 různých znaků = ascii tabulka má 256 různých zn
 	2. Strukturované - struct, union
 3. **Speciální**
 	1. void bez rozsahu
+ 	2. Pointer
 
 
 ### Enumy structy a uniony
