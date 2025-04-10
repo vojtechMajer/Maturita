@@ -21,7 +21,7 @@ způsob jak určovat tok "flow" programu, umožňuje programátorovi psát kod v
 
 **Konečnost** -> algoritmus musí skončit v reálném čase. Nemůžeme dělit 9/3 **přesně**, protože bychom nikdy neskončili a navíc by nám došla paměť
 
-**Rezultativnost** -> Pro stejné vstupní údaje je stejný výstup, pořád si nějak nejsem jistý jak by šlo pokazit tuto vlastnost :(
+**Rezultativnost** -> Každý program musí mít výsledek, i chyba je výsledkem
 
 **Hromadnost** -> algoritmus by měl být použitelný pro všechny úlohy stejného charakteru například.: 
 ```c
