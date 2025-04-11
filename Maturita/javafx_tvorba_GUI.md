@@ -87,9 +87,6 @@ public class MainController implements Initializable {
     }
 }
 ```
-FXML
-FXML je "markup language" založený na XML, který se používá v JavaFX pro deklarativní popis uživatelského rozhraní
-skládá se z komponentů a ovládacích prvků (Button, TextField, Label, ...) a rozvržení které určují rozmístění komponentů
 
 ## Controls
 Komponenty které slouží k interakci s uživatelem - zobrazení informací nebo získaní vstupních dat
