@@ -1,0 +1,73 @@
+A) Popište databázový systém – jeho části, úkoly a vlastnosti.
+B) Vysvětlete pojmy: **báze dat**, **systém řízení báze dat**, **databázový systém**, **databázový model**, integritní omezení, doména, redundantnost, primární klíč, cizí klíč, úrovně pohledu na data.
+
+## Databázový system
+Je spojení softwaru, který řídí data a samotných dat, má tak **2** části
+- SŘBD - software řídící data
+- báze dat - všechny spravované data
+
+### Báze dat
+- Vzájemně propojené data uložené v paměti, tak aby nedocházelo k redundanci
+- Je uložena pomocí jednotných principů (**Integrita**, **normalizace**, **relační model**)
+
+### Systém Řízení Báze Dat (SŘBD)
+Je software, který pracuje s **bází dat**, jeho **hlavními úkoly** jsou:
+- fyzické uložení v souborech
+- definování dat (tabulky, datové typy, atd...)
+- vytváření, manipulaci, aktualizaci dat  
+- vytváření aplikačních programů (třeba acces, formy)
+příklady **SŘBD** jsou například mysql workbench, access, Oracle 
+
+### Redundantnost (nadbytečnost)
+ - Je výskyt **duplicit** v datech
+ - vlastnost redundantnosti se snaží zbavit všech duplicit
+ - se snížením redundantnosti úzce souvisí **normalizace**
+ - Např. **telefonní čísla** vašich přátel, která máte uložena na **třech** různých místech: v adresáři vašeho mobilního telefonu, v papírovém telefonním seznamu a v PC např. v Outlooku. Co když některý kamarád **změní** telefonní číslo. Musíte toto číslo změnit nejen v mobilním telefonu, ale i v seznamu i PC. Co když změníte informace jen na jednom místě? Jak pak poznáte, které informace jsou správné?
+ - Cílem je mít jeden kousek dat uložen na jednom místě, aby se dal jednoduše upravit pro všechny částí, které jej používají
+
+### Normalizace
+Je řada kroků, která zajišťuje efektivní přístup a zápis dat. A zajišťují konzistenci databáze.
+**Kroky:**
+#### 1.NF
+**Definice**: Entita je v první normální formě, pokud každý její atribut obsahuje jen
+atomické hodnoty, dále již nedělitelné. Každý atribut nesmí obsahovat více
+druhů dat.
+
+**Např:**
+například atribut **adresa** v nějaké entitě porušuje 1.NF, protože se dále dá rozdělit na a město, ulice, číslo, PSČ
+
+**Aplikování první normálové formy**
+adresa -> město, ulice, číslo, PSČ
+#### 2.NF
+**Definice:** Splňuje 1.NF a navíc každý atribut, který není primárním klíčem je na primárním klíči plně závislý.
+
+**Např:**
+![[2.NF.png]]
+Cestující nemůže být závislý na id autobusu, co kdyby přestoupil na jiný bus, vytvářely by se duplicity
+
+#### 3.NF
+**Definice:** Entity splňují třetí normální formu 3NF, jestliže splňují 2NF a žádný
+atribut, **který není primárním klíčem UID**, **není tranzitivně** závislý na žádném
+klíči UID **a všechny neklíčové atributy jsou navzájem nezávislé**.
+
+**Tranzitivní závislost** je minimálně mezi dvěma atributy a klíčem, kde
+jeden atribut je funkčně závislý na klíči a druhý atribut je funkčně závislý na
+prvním atributu.
+
+Dalším způsobem vysvětlení třetí normální formy je: neunikátní atributy
+nemohou mít své vlastní atributy.
+![[3.NF.png]]
+
+
+**Integritní omezení** 
+**úrovně pohledu na data**
+**doména**
+
+
+**primární klíč**
+**cizí klíč**
+
+
+
+
+Zdroje: https://moodle.spseiostrava.cz:8088/course/view.php?id=79#section-5

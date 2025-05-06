@@ -20,7 +20,7 @@ int a = 10;
 ## Statické typování
 datový typ je třeba určit předem, a tak i zůstává celý zbytek života
 ```C
-	int promena = 49;
+int promena = 49;
 ```
 
 
@@ -35,7 +35,10 @@ používají se ve scanf() printf() a ostatních podobných funkcí
 ...
 ```
 ## životnost proměnné (scope)
+rozděluje kod do bloků, úzce souvisí se zásobníkem. Jestli je zrovna ve scopu, je také v zásobníku. Po vystoupení se ze zásobníku popne (odstraní) pryč. 
 ```c
+int globalni_promenna = 10; // životnost 
+
 void main
 {
 	int a = 10; // 'a' vzniká tady
@@ -49,6 +52,7 @@ void main
 	
 } // 'a' zaníká zde
 ```
+**Globální proměnná** - její životnost je stejně dlouhá jako životnost programu.
 
 ## více definic na řádku, pomocí čárky
 ```c
@@ -82,10 +86,11 @@ auto int a; // === int a;
 extern int promenna_definovana_jinde; // mimo stack u haldu; 0
 # Proměnná je definována někde mimo
 
-static int asd; // tahle proměnná si uchová hodnotu i po skončení bloku např.:
+static int asd;  // nejde k ní přistoupit pomocí klíčového slova extern z jiného souboru
+
 void pes()
 {
-	static int cislo = 2; // inicializace se provede pouze jednou
+	static int cislo = 2; // inicializace se provede pouze jednou; uchivává si hodnotu
 	cislo += 2;
 	print("%d"m cislo);
 }

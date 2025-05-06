@@ -21,9 +21,6 @@ definice makra
 #define MAX_SIZE 10 
 
 #define max(A, B) ((A) > (B) ? (A) : (B))
-
-
-
 ```
 
 makra s proměnnou i když vypadají jako funkce, jsou to pouze makra
@@ -72,7 +69,7 @@ Jde taky podmíněně zpracovávat platformně specifický kod
 #ifdef _WIN32
     // Windows (x64 and x86)
     ...
-#elif __unix__ // all unices, not all compilers
+#elif __unix__ 
     // Unix
     ...
 #elif __linux__
