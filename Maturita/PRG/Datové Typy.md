@@ -72,7 +72,7 @@ příklad.:
 4.        ...
 
 Tedy **char** (1B) má 256 různých znaků = ascii tabulka má 256 různých znaků
-**int** = 4B ($2^{36}$) = HODNĚ
+**int** = 4B ($2^{32}$) = HODNĚ
 
 
 ## Dělení 
@@ -81,7 +81,7 @@ Tedy **char** (1B) má 256 různých znaků = ascii tabulka má 256 různých zn
 	2. reálné (float, double)
 2. **Strukturované**
 	1. Homogenní - Pole, řetězce, soubory (soubor jako znaky v paměti, **ne**jedná se o strukturu `FILE* soubor = fopen(...);` 
-	2. Strukturované - struct, union
+	2. Heterogenní - struct, union
 3. **Speciální**
 	1. void bez rozsahu
  	2. Pointer
