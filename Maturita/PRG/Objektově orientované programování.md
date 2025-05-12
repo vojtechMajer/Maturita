@@ -175,16 +175,16 @@ z.zvuk(); // ➝ Haf haf
 je třída ze které nemůžeme explicitně vytvořit objekt můžeme z ní pouze dědit.
 Vytváříme pomocí klíčového slova 'abstract'
 Důležité je porozumět rozdílu oproti rozhraní:
-- rozhraní nemůže mít vlastnosti ani implementaci metod -> toto si řeší každý potomek sám, zatož abstraktní třída se chová jako všechny ostatní třídy
-- nevýhodou abstaktní třídy je jako u všech rodičovských tříd -> můžu dědit jen z jedné (absttraktní) třídy 
+- rozhraní nemůže mít vlastnosti ani implementaci metod -> toto si řeší každý potomek sám, kdežto abstraktní třída se chová jako všechny ostatní třídy
+- nevýhodou abstraktní třídy je jako u všech rodičovských tříd -> můžu dědit jen z jedné (abstraktní) třídy 
 
 
-například **vozdilo** by mohlo být letadlo, auto nebo kamion, proto si vytvoříme třídu vozidlo a třídy jako letadlo nebo auto z ní můžou dědit.
+například **vozidlo** by mohlo být letadlo, auto nebo kamion, proto si vytvoříme třídu vozidlo a třídy jako letadlo nebo auto z ní můžou dědit.
 všechno s jinými parametry, ale stejným základem (vlastnost kapacita lidí, metoda pohyb a tak dále)
 
 ## Exceptions (Vyjímky)
 Je potomek třídy `Exception` ,který je vyhozen v případě chyby buď samotným programem nebo programátorem( viz vytvoření vlastní vyjímky)
-Například vyjímky, které řeží chyby vstupů a výstupů se nazývají IOException.
+Například vyjímky, které řeží chyby vstupů a výstupů se nazývají `IOException`.
 V jazyce C nemáme možnost odchytit vyjímky musíme si všechno ručně ošetřit pomocí alternativy(větvení)
 ### Vysvětlení pojmů (klíčových slov) pro odchycení a vyhodnocení vyjímky
 - **try** => blok kodu ve kterém odchytáváme vyjímku
