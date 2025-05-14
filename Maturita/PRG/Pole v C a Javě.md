@@ -83,6 +83,100 @@ proměnná **pole** je statická(v **zásobníku**) proměnná, která odkazuje 
 ![Zásobnik a halda](./zasobnik_a_halda.png)
 
 
+## Dvojrozměrná pole
+
+### Statické 
+Statické 2 rozměrné pole se chová stejně jako jednorozměrné pole.
+
+```c
+#define ROWS 4
+#define COLS 3
+int p [ROWS][COLS] = {{1,2,3}, {4,5,6}, {7,8,9}, {10,11,12}};
+for (int i = 0; i < COLS; i++)
+{
+	for (int j = 0; j < ROWS; j++)
+	{
+	
+	printf(" |%d|", p[i][j]);
+	}
+	printf("\n");
+}
+
+// Přístup
+p[1][2] = 6; // 6 se změní na 6
+// hodnota přes pointerovou aritmetiku: *(p + COLS * 1 + 2)
+
+
+// logické zobrazení
+    0   1   2   3
+ 0 |1| |2| |3| |4|
+ 1 |4| |5| |6| |7|
+ 2 |7| |8| |9| |10|
+// fyzická struktura dat
+&p -> |1| |2| |3| |4| |5| |6| |7| ...
+
+```
+### Dynamické
+
+
+![2dDynamickePole](dynamicke2dPole.png)
+
+```c
+
+#define ROWS 10
+#define COLS 1
+
+int* pole[ROWS];
+
+for (int i = 0; i < ROWS; i++)
+{
+	pole[i] = (int*) malloc(sizeof(int) * (COLS+i));
+
+	for (int j = 0; j < COLS+i; j++)
+	{
+		pole[i][j] = j;
+	}
+
+}
+for (int i = 0; i < ROWS; i++)
+{
+	for (int j = 0; j < COLS+i; j++)
+	{
+		printf(" %d ", pole[i][j]);
+	}
+printf("\n");
+}
+
+```
+
+![Dymmore](dynamickePolePoli.png)
+```c
+#define ROWS 3
+
+#define COLS 2
+
+int **p = (int**) malloc(sizeof(int*) * ROWS);
+
+for (int i = 0; i < ROWS; i++)
+{
+p[i] = (int*) malloc(sizeof(int) * COLS);
+	for (int j = 0; j < COLS; j++)
+	{
+		p[i][j] = 42;
+	}
+}
+
+for (int i = 0; i < COLS; i++)
+{
+	for (int j = 0; j < ROWS; j++)
+	{
+		printf(" %d ", p[j][i]);
+	}
+printf("\n");
+}
+```
+
+
 ## Pole v jave
 ```java
 int[] pole = new int[3] {1,2,3};
